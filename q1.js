@@ -37,18 +37,38 @@ var n = parseInt(n);
 // addNmbers(n);
 
 
-if(isNaN(n)){
-    console.log("Please enter a valid number");
-}else{
-    if(n>0){
-        var d = 0;
-        while(n>0){
-            var rem = n % 10;
-            d = d*10 + rem;
-            n = Math.floor(n/10);
-        }
-        console.log("The sum of digits is " + d);   
-    }else{
-        console.log("Please enter a positive number");
+// if(isNaN(n)){
+//     console.log("Please enter a valid number");
+// }else{
+//     if(n>0){
+//         var d = 0;
+//         while(n>0){
+//             var rem = n % 10;
+//             d = d*10 + rem;
+//             n = Math.floor(n/10);
+//         }
+//         console.log("The sum of digits is " + d);   
+//     }else{
+//         console.log("Please enter a positive number");
+//     }
+// }
+
+//check the strong numbers 
+
+var copy = n;
+var sum = 0;
+ while(n>0){
+    var rem = n% 10;
+    var fact = 1;
+    for(let i = 1;i<=rem;i++){
+        fact*= i;
     }
+    sum += fact;
+    n =Math.floor(n/10);
+}
+if(sum == copy){
+    console.log("it is a strong number");
+}
+else{
+    console.log("it is not a strong number");
 }
